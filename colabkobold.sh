@@ -55,7 +55,7 @@ function launch
         echo Initialization complete...
         exit 0
     else
-    cd /content/KoboldAI-Client
+    cd /content/KoboldAI
     echo "Launching KoboldAI with the following options : python3 aiserver.py$model$kmpath$configname$ngrok$localtunnel$savemodel$revision$backend --colab"
     python3 aiserver.py --ngrok --lowmem
     exit
@@ -113,10 +113,10 @@ fi
 # Install and/or Update KoboldAI
 if [ "$init" != "skip" ]; then
     cd /content
-    git=https://github.com/koboldai/KoboldAI-Client
+    git=https://github.com/henk717/KoboldAI
 
-    mkdir /content/KoboldAI-Client
-    cd /content/KoboldAI-Client
+    mkdir /content/KoboldAI
+    cd /content/KoboldAI
 
     git init
     git remote remove origin
@@ -133,7 +133,7 @@ if [ "$init" != "skip" ]; then
 
     git submodule update --init --recursive
     
-    cd /content/KoboldAI-Client
+    cd /content/KoboldAI
 
     cp -rn stories/* /content/drive/MyDrive/KoboldAI/stories/
     cp -rn userscripts/* /content/drive/MyDrive/KoboldAI/userscripts/
