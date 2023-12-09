@@ -57,7 +57,7 @@ function launch
     else
     cd /content/KoboldAI-Client
     echo "Launching KoboldAI with the following options : python3 aiserver.py$model$kmpath$configname$ngrok$localtunnel$savemodel$revision$backend --colab"
-    python3 aiserver.py --ngrok --lowmem --model TheBloke/Chronoboros-33B-GPTQ
+    python3 aiserver.py --ngrok --lowmem
     exit
     fi
 }
@@ -113,21 +113,7 @@ fi
 # Install and/or Update KoboldAI
 if [ "$init" != "skip" ]; then
     cd /content
-    if [ ! -z ${git+x} ]; then
-        if [ "$git" == "Official" ]; then
-            git=https://github.com/koboldai/KoboldAI-Client
-        fi
-        if [ "$git" == "United" ]; then
-            git=https://github.com/henk717/KoboldAI-Client
-            #branch=b603690e4cc3dff7491cbc2fd0b445a18b7b88d4
-        fi
-        if [ "$git" == "united" ]; then
-            git=https://github.com/henk717/KoboldAI-Client
-            #branch=b603690e4cc3dff7491cbc2fd0b445a18b7b88d4
-        fi
-    else
-        git=https://github.com/koboldai/KoboldAI-Client
-    fi
+    git=https://github.com/koboldai/KoboldAI-Client
 
     mkdir /content/KoboldAI-Client
     cd /content/KoboldAI-Client
